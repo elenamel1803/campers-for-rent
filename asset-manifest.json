@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/campers-for-rent/static/css/main.b87514ff.css",
+    "main.js": "/campers-for-rent/static/js/main.5a9bc161.js",
+    "index.html": "/campers-for-rent/index.html",
+    "main.b87514ff.css.map": "/campers-for-rent/static/css/main.b87514ff.css.map",
+    "main.5a9bc161.js.map": "/campers-for-rent/static/js/main.5a9bc161.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b87514ff.css",
+    "static/js/main.5a9bc161.js"
+  ]
+}
