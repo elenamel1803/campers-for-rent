@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import {
-  CommentInput,
   Form,
   Input,
   InputsWrap,
+  SendButton,
   Text,
+  Textarea,
   Title,
 } from './BookingForm.styled';
 
@@ -50,7 +51,7 @@ const BookingForm = () => {
           value={name}
           required
           onChange={handleChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          //   pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           placeholder="Name"
         />
         <Input
@@ -72,7 +73,7 @@ const BookingForm = () => {
           placeholder="Booking date"
         />
 
-        <CommentInput
+        <Textarea
           type="text"
           name="comment"
           value={comment}
@@ -82,7 +83,7 @@ const BookingForm = () => {
         />
       </InputsWrap>
 
-      <button type="submit">Send</button>
+      <SendButton type="submit">Send</SendButton>
     </Form>
   );
 };

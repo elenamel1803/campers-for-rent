@@ -35,8 +35,17 @@ export const Input = styled.input`
   color: #101828;
 `;
 
-export const CommentInput = styled(Input)`
+export const Textarea = styled.textarea`
+  border-radius: 10px;
+  border: none;
+  padding: 18px;
+  width: 400px;
   height: 114px;
+  background: #f7f7f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
 `;
 
 export const InputsWrap = styled.div`
@@ -44,4 +53,21 @@ export const InputsWrap = styled.div`
   flex-direction: column;
   gap: 14px;
   margin-bottom: 24px;
+`;
+
+export const SendButton = styled.button`
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 160px;
+  height: 56px;
+  background: #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+
+  &:hover {
+    background: #d84343;
+  }
 `;

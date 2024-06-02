@@ -92,6 +92,14 @@ button {
   padding: 0;
 }
 
+textarea {
+    font-family: 'Inter', sans-serif ; 
+  }
+
+textarea::placeholder {
+    font-family: 'Inter', sans-serif ; 
+  }
+
 input {
     font-family: 'Inter', sans-serif ; 
   }
