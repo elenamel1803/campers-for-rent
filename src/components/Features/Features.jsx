@@ -9,11 +9,13 @@ import {
 } from './Features.styled';
 import { formattedValue } from 'helpers/formattedValue';
 import { capitalizeText } from 'helpers/capitalizedText';
+import { SvgIcon } from 'helpers/svgIcon';
+import Air from '../../assets/img/Air.svg';
 
 const Features = ({ advert }) => {
   const {
     adults,
-    children,
+    // children,
     transmission,
     engine,
     details,
@@ -27,7 +29,7 @@ const Features = ({ advert }) => {
 
   const {
     airConditioner,
-    bathroom,
+    // bathroom,
     kitchen,
     beds,
     TV,
@@ -46,25 +48,116 @@ const Features = ({ advert }) => {
     <FeaturesWrap>
       <div>
         <List>
-          {adults > 0 && <Item>{adults} adults</Item>}
-          {children > 0 && <Item> {children} children</Item>}
-          <Item>{capitalizeText(transmission)}</Item>
-          {airConditioner > 0 && <Item>AC</Item>}
-          <Item>{capitalizeText(engine)}</Item>
-          {kitchen > 0 && <Item>kitchen</Item>}
-          {bathroom > 0 && <Item>bathroom</Item>}
-          {beds > 0 && <Item>{beds} beds</Item>}
-          {airConditioner > 0 && <Item>{airConditioner} Air conditioner</Item>}
-          {CD > 0 && <Item>CD</Item>}
-          {TV > 0 && <Item>TV</Item>}
-          {radio > 0 && <Item>Radio</Item>}
-          {hob > 0 && <Item>{hob} hob</Item>}
-          {toilet > 0 && <Item>Toilet</Item>}
-          {shower > 0 && <Item>Shower</Item>}
-          {freezer > 0 && <Item>Freezer</Item>}
-          {microwave > 0 && <Item>Microwave</Item>}
-          {gas !== '' && <Item>Gas</Item>}
-          {water !== '' && <Item>Water</Item>}
+          {adults > 0 && (
+            <Item>
+              <SvgIcon id="icon-users" />
+              {adults} adults
+            </Item>
+          )}
+          {/* {children > 0 && (
+            <Item>
+              <SvgIcon id="icon-users" />
+              {children} children
+            </Item>
+          )} */}
+          <Item>
+            <SvgIcon id="icon-transmission" fill="none" stroke="#101828" />
+            {capitalizeText(transmission)}
+          </Item>
+          {airConditioner > 0 && (
+            <Item>
+              <img src={Air} alt="Air" />
+              AC
+            </Item>
+          )}
+          <Item>
+            <SvgIcon id="icon-engine" />
+            {capitalizeText(engine)}
+          </Item>
+          {kitchen > 0 && (
+            <Item>
+              <SvgIcon id="icon-kitchen" fill="none" stroke="#101828" />
+              kitchen
+            </Item>
+          )}
+          {/* {bathroom > 0 && (
+            <Item>
+              <SvgIcon id="icon-engine" />
+              bathroom
+            </Item>
+          )} */}
+          {beds > 0 && (
+            <Item>
+              <SvgIcon id="icon-beds" fill="none" stroke="#101828" />
+              {beds} beds
+            </Item>
+          )}
+          {airConditioner > 0 && (
+            <Item>
+              <SvgIcon id="icon-AirConditioner" fill="none" stroke="#101828" />
+              {airConditioner} Air conditioner
+            </Item>
+          )}
+          {CD > 0 && (
+            <Item>
+              <SvgIcon id="icon-CD" fill="none" stroke="#101828" />
+              CD
+            </Item>
+          )}
+          {TV > 0 && (
+            <Item>
+              <SvgIcon id="icon-TV" fill="none" stroke="#101828" />
+              TV
+            </Item>
+          )}
+          {radio > 0 && (
+            <Item>
+              <SvgIcon id="icon-Radio" fill="none" stroke="#101828" />
+              Radio
+            </Item>
+          )}
+          {hob > 0 && (
+            <Item>
+              <SvgIcon id="icon-hob" fill="none" stroke="#101828" />
+              {hob} hob
+            </Item>
+          )}
+          {toilet > 0 && (
+            <Item>
+              <SvgIcon id="icon-Toilet" fill="#101828" />
+              Toilet
+            </Item>
+          )}
+          {shower > 0 && (
+            <Item>
+              <SvgIcon id="icon-shower" fill="none" stroke="#101828" />
+              Shower
+            </Item>
+          )}
+          {freezer > 0 && (
+            <Item>
+              <SvgIcon id="icon-Freezer" fill="none" stroke="#101828" />
+              Freezer
+            </Item>
+          )}
+          {microwave > 0 && (
+            <Item>
+              <SvgIcon id="icon-Microwave" fill="none" stroke="#101828" />
+              Microwave
+            </Item>
+          )}
+          {gas !== '' && (
+            <Item>
+              <SvgIcon id="icon-Gas" fill="#101828" />
+              Gas
+            </Item>
+          )}
+          {water !== '' && (
+            <Item>
+              <SvgIcon id="icon-Water" fill="none" stroke="#101828" />
+              Water
+            </Item>
+          )}
         </List>
 
         <Title>Vehicle details</Title>

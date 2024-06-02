@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllAdverts } from '../../redux/advertsOperations';
 import { selectAdverts, selectIsLoading } from '../../redux/advertsSelectors';
 import Loader from 'components/Loader/Loader';
+import { Button, CatalogWrap, Wrap } from './CatalogPage.styled';
+import Filters from 'components/Filters/Filters';
 
 const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -20,14 +22,19 @@ const CatalogPage = () => {
   };
 
   return (
-    <>
-      <AdvertsList adverts={adverts.slice(0, visibleAdverts)} />
+    <CatalogWrap>
+      <Filters />
+      <Wrap>
+        <AdvertsList adverts={adverts.slice(0, visibleAdverts)} />
 
-      {(isLoading && <Loader />) ||
-        (visibleAdverts < adverts.length && (
-          <button onClick={loadMore}>Load more</button>
-        ))}
-    </>
+        {(isLoading && <Loader />) ||
+          (visibleAdverts < adverts.length && (
+            <Button type="button" onClick={loadMore}>
+              Load more
+            </Button>
+          ))}
+      </Wrap>
+    </CatalogWrap>
   );
 };
 
