@@ -3,7 +3,7 @@ import { fetchAllAdverts, fetchOneAdvert } from './advertsOperations';
 
 const initialState = {
   items: [],
-  item: {},
+  currentItem: {},
   isLoading: false,
   error: null,
 };
@@ -18,16 +18,16 @@ const rejected = (state, { payload }) => {
   state.error = payload;
 };
 
-const allFulfilled = (state, { payload }) => {
+const allFulfilled = (state = initialState, { payload }) => {
   state.isLoading = false;
   state.error = null;
   state.items = payload;
 };
 
-const oneFulfilled = (state, { payload }) => {
+const oneFulfilled = (state = initialState, { payload }) => {
   state.isLoading = false;
   state.error = null;
-  state.item = payload;
+  state.currentItem = payload;
 };
 
 export const advertsSlice = createSlice({
