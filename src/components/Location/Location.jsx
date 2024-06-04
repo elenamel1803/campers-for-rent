@@ -4,7 +4,6 @@ import {
   Input,
   InputWrapper,
   Label,
-  PlaceholderIconWrapper,
   Wrap,
 } from './Location.styled';
 

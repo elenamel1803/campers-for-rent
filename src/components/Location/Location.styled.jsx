@@ -58,12 +58,3 @@ export const Input = styled.input`
     border: 2px solid transparent;
   }
 `;
-
-// export const PlaceholderIconWrapper = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 18px;
-//   transform: translateY(-50%);
-//   display: flex;
-//   align-items: center;
-// `;
