@@ -1,19 +1,19 @@
-import { NavLink } from 'react-router-dom';
+import { Link, List } from './Navbar.styled';
 
 function Navbar() {
   return (
     <nav>
-      <ul>
+      <List>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <NavLink to="/catalog">Catalog</NavLink>
+          <Link to="/catalog">Catalog</Link>
         </li>
         <li>
-          <NavLink to="/favorites">Favorites</NavLink>
+          <Link to="/favorites">Favorites</Link>
         </li>
-      </ul>
+      </List>
     </nav>
   );
 }

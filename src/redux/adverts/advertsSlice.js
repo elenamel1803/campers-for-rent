@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllAdverts, fetchOneAdvert } from './advertsOperations';
+import { fetchAllAdverts } from './advertsOperations';
 
 const initialState = {
   items: [],
-  currentItem: {},
+  // item: {},
   isLoading: false,
   error: null,
 };
@@ -18,16 +18,10 @@ const rejected = (state, { payload }) => {
   state.error = payload;
 };
 
-const allFulfilled = (state = initialState, { payload }) => {
+const fulfilled = (state = initialState, { payload }) => {
   state.isLoading = false;
   state.error = null;
   state.items = payload;
-};
-
-const oneFulfilled = (state = initialState, { payload }) => {
-  state.isLoading = false;
-  state.error = null;
-  state.currentItem = payload;
 };
 
 export const advertsSlice = createSlice({
@@ -36,12 +30,8 @@ export const advertsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchAllAdverts.pending, pending)
-      .addCase(fetchAllAdverts.fulfilled, allFulfilled)
-      .addCase(fetchAllAdverts.rejected, rejected)
-
-      .addCase(fetchOneAdvert.pending, pending)
-      .addCase(fetchOneAdvert.fulfilled, oneFulfilled)
-      .addCase(fetchOneAdvert.rejected, rejected);
+      .addCase(fetchAllAdverts.fulfilled, fulfilled)
+      .addCase(fetchAllAdverts.rejected, rejected);
   },
 });
 

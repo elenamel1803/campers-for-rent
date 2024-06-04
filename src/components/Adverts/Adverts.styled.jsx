@@ -62,7 +62,7 @@ export const Box = styled.div`
 export const RatingText = styled.p`
   display: flex;
   gap: 4px;
-  align-items: baseline;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -74,6 +74,7 @@ export const RatingText = styled.p`
 export const LocationText = styled.p`
   display: flex;
   gap: 4px;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;

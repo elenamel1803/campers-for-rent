@@ -16,9 +16,10 @@ import {
   Title,
   Wrap,
 } from './Modal.styled';
+import { SvgIcon } from 'helpers/svgIcon';
 
 const Modal = ({ advert, onClose }) => {
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState(null);
   const { gallery, name, price, rating, location, description, reviews } =
     advert;
 
@@ -40,19 +41,25 @@ const Modal = ({ advert, onClose }) => {
     }
   };
 
-  // const galeryList = gallery.map((imageUrl, index) => (
-  //   <img key={index} src={imageUrl} alt={name} width={290} height={310} />
-  // ));
-
   return (
     <Overlay onClick={handleOverlayClick}>
       <ModalWrap>
         <Title>{name}</Title>
         <Wrap>
           <RatingText>
+            <SvgIcon id="icon-star" width="16" height="16" />
             {rating} ({reviews.length} Reviews)
           </RatingText>
-          <LocationText>{location}</LocationText>
+          <LocationText>
+            <SvgIcon
+              id="icon-Map"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="#101828"
+            />
+            {location}
+          </LocationText>
         </Wrap>
         <PriceText>€{price.toFixed(2)}</PriceText>
         <GaleryWrap>
@@ -62,7 +69,7 @@ const Modal = ({ advert, onClose }) => {
         </GaleryWrap>
         <DescriptionText>{description}</DescriptionText>
         <ButtonClose type="button" onClick={onClose}>
-          Close
+          <SvgIcon id="icon-close" width="32" height="32" stroke="#101828" />
         </ButtonClose>
         <NavWrap>
           <ButtonText
@@ -80,11 +87,8 @@ const Modal = ({ advert, onClose }) => {
             Reviews
           </ButtonText>
         </NavWrap>
-        {activeTab === 'features' ? (
-          <Features advert={advert} />
-        ) : (
-          <Reviews advert={advert} />
-        )}
+        {activeTab === 'features' && <Features advert={advert} />}
+        {activeTab === 'reviews' && <Reviews advert={advert} />}
       </ModalWrap>
     </Overlay>
   );

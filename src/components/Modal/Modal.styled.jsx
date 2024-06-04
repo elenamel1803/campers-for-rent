@@ -38,6 +38,9 @@ export const PriceText = styled(Title)`
 `;
 
 export const RatingText = styled.p`
+  display: flex;
+  gap: 4px;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -47,6 +50,9 @@ export const RatingText = styled.p`
 `;
 
 export const LocationText = styled.p`
+  display: flex;
+  gap: 4px;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -84,12 +90,36 @@ export const ButtonText = styled.button`
   font-size: 20px;
   line-height: 1.2;
   color: #101828;
+  padding: 0;
+  position: relative;
+
+  &.active::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #e44848;
+    margin-top: 24px;
+  }
 `;
 
 export const NavWrap = styled.nav`
   display: flex;
   gap: 40px;
   margin-bottom: 24px;
+  /* position: relative;
+  margin-bottom: 68px; */
+
+  /* &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(16, 24, 40, 0.2);
+    margin-top: 50px;
+  } */
 `;
 
 export const ButtonClose = styled.button`

@@ -19,11 +19,28 @@ import { truncateText } from '../../helpers/truncateText';
 import { capitalizeText } from '../../helpers/capitalizedText';
 import { SvgIcon } from 'helpers/svgIcon';
 import Air from '../../assets/img/Air.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorite } from '../../redux/favorite/favoriteSelectors';
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from '../../redux/favorite/favoriteSlice';
 
 const AdvertCard = ({ advert }) => {
+  const favorites = useSelector(selectFavorite);
   const [showModal, setShowModal] = useState(false);
+  const isFavorite = favorites.some(fav => fav._id === advert._id);
+  const dispatch = useDispatch();
 
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorite(advert._id));
+    } else {
+      dispatch(addToFavorite(advert));
+    }
+  };
 
   const {
     _id,
@@ -51,13 +68,13 @@ const AdvertCard = ({ advert }) => {
             <Title>{truncateText(name, 23)}</Title>
             <Box>
               <Title>€{price.toFixed(2)}</Title>
-              <button>
+              <button isFavorite={isFavorite} onClick={handleFavoriteClick}>
                 <SvgIcon
                   id="icon-hart"
                   width="24"
                   height="24"
-                  fill="none"
-                  stroke="#101828"
+                  fill={isFavorite ? '#E44848' : 'none'}
+                  stroke={isFavorite ? '#E44848' : '#101828'}
                 />
               </button>
             </Box>

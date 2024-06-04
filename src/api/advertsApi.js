@@ -8,8 +8,3 @@ export const getAllAdverts = async () => {
   const { data } = await advertsInstance.get('/adverts');
   return data;
 };
-
-export const getAdvertById = async id => {
-  const { data } = await axios.get(`/adverts/${id}`);
-  return data;
-};

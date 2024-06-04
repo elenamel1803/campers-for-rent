@@ -1,16 +1,39 @@
-const Location = () => {
+import { SvgIcon } from 'helpers/svgIcon';
+import {
+  IconWrapper,
+  Input,
+  InputWrapper,
+  Label,
+  PlaceholderIconWrapper,
+  Wrap,
+} from './Location.styled';
+
+const Location = ({ location, setLocation }) => {
+  const handleChange = e => {
+    setLocation(e.target.value);
+  };
+
   return (
-    <>
-      <label>Location</label>
-      <input
-        type="text"
-        name="location"
-        // value={location}
-        required
-        // onChange={handleChange}
-        placeholder="Comment"
-      />
-    </>
+    <Wrap>
+      <Label>Location</Label>
+      <InputWrapper>
+        <IconWrapper hasText={!!location}>
+          <SvgIcon
+            id="icon-Map"
+            width="18"
+            height="20"
+            fill="none"
+            stroke={location ? '#101828' : 'rgba(16, 24, 40, 0.6)'}
+          />
+        </IconWrapper>
+        <Input
+          type="text"
+          placeholder="City"
+          value={location}
+          onChange={handleChange}
+        />
+      </InputWrapper>
+    </Wrap>
   );
 };
 
