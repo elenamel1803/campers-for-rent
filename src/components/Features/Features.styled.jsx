@@ -33,6 +33,7 @@ export const Title = styled.h3`
 `;
 
 export const DetailsList = styled.ul`
+  margin-top: 24px;
   display: grid;
   gap: 14px;
   max-width: 430px;
@@ -45,6 +46,7 @@ export const DetailsItem = styled.li`
 `;
 
 export const FeaturesWrap = styled.div`
+  margin-top: 44px;
   display: flex;
   gap: 24px;
 `;

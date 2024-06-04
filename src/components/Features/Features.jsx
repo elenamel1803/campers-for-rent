@@ -161,6 +161,12 @@ const Features = ({ advert }) => {
         </List>
 
         <Title>Vehicle details</Title>
+        <SvgIcon
+          id="icon-line"
+          width="100%"
+          height="2"
+          stroke="rgba(16, 24, 40, 0.2)"
+        />
         <DetailsList>
           <DetailsItem>
             <p>Form</p>

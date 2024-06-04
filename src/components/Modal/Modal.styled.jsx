@@ -90,7 +90,6 @@ export const ButtonText = styled.button`
   font-size: 20px;
   line-height: 1.2;
   color: #101828;
-  padding: 0;
   position: relative;
 
   &.active::after {
@@ -100,26 +99,14 @@ export const ButtonText = styled.button`
     width: 100%;
     height: 5px;
     background-color: #e44848;
-    margin-top: 24px;
+    margin-top: 30px;
   }
 `;
 
 export const NavWrap = styled.nav`
   display: flex;
   gap: 40px;
-  margin-bottom: 24px;
-  /* position: relative;
-  margin-bottom: 68px; */
-
-  /* &::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(16, 24, 40, 0.2);
-    margin-top: 50px;
-  } */
+  margin-bottom: 18px;
 `;
 
 export const ButtonClose = styled.button`

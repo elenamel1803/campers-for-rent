@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ReviewsWrap = styled.div`
+  margin-top: 44px;
   display: flex;
   gap: 24px;
 `;
