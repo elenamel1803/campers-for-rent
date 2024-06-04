@@ -58,3 +58,8 @@ export const Text = styled.p`
   line-height: 1.5;
   color: #475467;
 `;
+
+export const Stars = styled.div`
+  display: flex;
+  gap: 4px;
+`;

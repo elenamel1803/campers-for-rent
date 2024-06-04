@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {
+  ErrorMessage,
   Form,
   Input,
   InputsWrap,
@@ -8,6 +9,7 @@ import {
   Textarea,
   Title,
 } from './BookingForm.styled';
+import { validate } from '../../helpers/validateBookingForm';
 
 const INITIAL_STATE = {
   name: '',
@@ -17,7 +19,8 @@ const INITIAL_STATE = {
 };
 
 const BookingForm = () => {
-  const [state, setState] = useState('...INITIAL_STATE');
+  const [state, setState] = useState('{...INITIAL_STATE}');
+  const [errors, setErrors] = useState({});
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -30,7 +33,9 @@ const BookingForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    reset();
+    if (validate({ state, setErrors })) {
+      reset();
+    }
   };
 
   const reset = () => {
@@ -48,38 +53,34 @@ const BookingForm = () => {
           type="text"
           name="name"
           value={name}
-          required
           onChange={handleChange}
-          //   pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           placeholder="Name"
         />
+        {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
         <Input
           type="email"
           name="email"
           value={email}
-          required
           onChange={handleChange}
-          //   pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           placeholder="Email"
         />
-
+        {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
         <Input
           type="date"
           name="date"
           value={date}
-          required
           onChange={handleChange}
           placeholder="Booking date"
         />
-
+        {errors.date && <ErrorMessage>{errors.date}</ErrorMessage>}
         <Textarea
           type="text"
           name="comment"
           value={comment}
-          required
           onChange={handleChange}
           placeholder="Comment"
         />
+        {errors.comment && <ErrorMessage>{errors.comment}</ErrorMessage>}
       </InputsWrap>
 
       <SendButton type="submit">Send</SendButton>

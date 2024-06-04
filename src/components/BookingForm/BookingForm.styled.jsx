@@ -33,6 +33,13 @@ export const Input = styled.input`
   font-size: 16px;
   line-height: 1.25;
   color: #101828;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(16, 24, 40, 0.6);
+  }
 `;
 
 export const Textarea = styled.textarea`
@@ -70,4 +77,11 @@ export const SendButton = styled.button`
   &:hover {
     background: #d84343;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #e44848;
 `;

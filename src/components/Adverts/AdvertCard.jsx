@@ -68,7 +68,10 @@ const AdvertCard = ({ advert }) => {
             <Title>{truncateText(name, 23)}</Title>
             <Box>
               <Title>€{price.toFixed(2)}</Title>
-              <button isFavorite={isFavorite} onClick={handleFavoriteClick}>
+              <button
+                data-isfavorite={isFavorite}
+                onClick={handleFavoriteClick}
+              >
                 <SvgIcon
                   id="icon-hart"
                   width="24"

@@ -20,6 +20,7 @@ import { SvgIcon } from 'helpers/svgIcon';
 
 const Modal = ({ advert, onClose }) => {
   const [activeTab, setActiveTab] = useState(null);
+  const [openTab, setOpenTab] = useState('features');
   const { gallery, name, price, rating, location, description, reviews } =
     advert;
 
@@ -74,15 +75,25 @@ const Modal = ({ advert, onClose }) => {
         <NavWrap>
           <ButtonText
             type="button"
-            className={activeTab === 'features' ? 'active' : ''}
-            onClick={() => setActiveTab('features')}
+            className={openTab === 'features' ? 'active' : ''}
+            onClick={() => {
+              if (openTab !== 'features' || openTab === 'features') {
+                setOpenTab('features');
+                setActiveTab('features');
+              }
+            }}
           >
             Features
           </ButtonText>
           <ButtonText
             type="button"
-            className={activeTab === 'reviews' ? 'active' : ''}
-            onClick={() => setActiveTab('reviews')}
+            className={openTab === 'reviews' ? 'active' : ''}
+            onClick={() => {
+              if (openTab !== 'reviews') {
+                setOpenTab('reviews');
+                setActiveTab('reviews');
+              }
+            }}
           >
             Reviews
           </ButtonText>

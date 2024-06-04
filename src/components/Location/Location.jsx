@@ -16,7 +16,7 @@ const Location = ({ location, setLocation }) => {
     <Wrap>
       <Label>Location</Label>
       <InputWrapper>
-        <IconWrapper hasText={!!location}>
+        <IconWrapper data-hastext={!!location}>
           <SvgIcon
             id="icon-Map"
             width="18"

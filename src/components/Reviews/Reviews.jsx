@@ -9,6 +9,7 @@ import {
   Text,
   Wrap,
 } from './Reviews.styled';
+import ReviewRating from './ReviewsRating';
 
 const Reviews = ({ advert }) => {
   const firstNameLetter = name => {
@@ -25,7 +26,8 @@ const Reviews = ({ advert }) => {
                 <FirstLetter>{firstNameLetter(reviewer_name)}</FirstLetter>
                 <Wrap>
                   <Name>{reviewer_name}</Name>
-                  <span>{reviewer_rating}</span>
+                  {/* <span>{reviewer_rating}</span> */}
+                  <ReviewRating reviewer_rating={reviewer_rating} />
                 </Wrap>
               </Box>
               <Text>{comment}</Text>
