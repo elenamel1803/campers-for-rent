@@ -1,6 +1,6 @@
 import { capitalizeText } from '../../helpers/capitalizedText';
 import { SvgIcon } from '../../helpers/svgIcon';
-import air from 'assets/img/air.svg';
+import Air from '../../assets/img/Air.svg';
 import { Item, List } from './Features.styled';
 
 const FeaturesList = ({ advert }) => {
@@ -36,7 +36,7 @@ const FeaturesList = ({ advert }) => {
       </Item>
       {airConditioner > 0 && (
         <Item>
-          <img src={air} alt="Air" />
+          <img src={Air} alt="Air" />
           AC
         </Item>
       )}
