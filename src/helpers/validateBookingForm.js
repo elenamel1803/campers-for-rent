@@ -7,7 +7,6 @@ export const validate = ({ state, setErrors }) => {
     ? ''
     : 'Email is invalid.';
   tempErrors.date = state.date ? '' : 'This field is required.';
-  tempErrors.comment = state.comment ? '' : 'This field is required.';
   setErrors({
     ...tempErrors,
   });

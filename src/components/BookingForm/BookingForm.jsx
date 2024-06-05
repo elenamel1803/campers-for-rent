@@ -1,5 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import { validate } from '../../helpers/validateBookingForm';
+import 'react-datepicker/dist/react-datepicker.css';
 import {
+  CalendarIcon,
+  CalendarWrapper,
   ErrorMessage,
   Form,
   Input,
@@ -9,26 +14,32 @@ import {
   Textarea,
   Title,
 } from './BookingForm.styled';
-import { validate } from '../../helpers/validateBookingForm';
+import { SvgIcon } from 'helpers/svgIcon';
 // import Calendar from 'components/Calendar/Calendar';
 
 const INITIAL_STATE = {
   name: '',
   email: '',
-  date: new Date(),
+  date: null,
   comment: '',
 };
 
 const BookingForm = () => {
-  const [state, setState] = useState('{...INITIAL_STATE}');
+  const [state, setState] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-
     setState({
       ...state,
       [name]: value,
+    });
+  };
+
+  const handleDateChange = date => {
+    setState({
+      ...state,
+      date,
     });
   };
 
@@ -36,6 +47,7 @@ const BookingForm = () => {
     e.preventDefault();
     if (validate({ state, setErrors })) {
       reset();
+      window.location.reload();
     }
   };
 
@@ -44,6 +56,16 @@ const BookingForm = () => {
   };
 
   const { name, email, date, comment } = state;
+
+  const CustomInput = React.forwardRef(({ value, onClick, onChange }, ref) => (
+    <Input
+      ref={ref}
+      onClick={onClick}
+      onChange={onChange}
+      value={value}
+      placeholder="Booking date"
+    />
+  ));
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -66,15 +88,27 @@ const BookingForm = () => {
           placeholder="Email"
         />
         {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-        <Input
-          type="date"
-          name="date"
-          value={date}
-          onChange={handleChange}
-          placeholder="Booking date"
-        />
+
+        <CalendarWrapper>
+          <DatePicker
+            selected={date}
+            onChange={handleDateChange}
+            customInput={<CustomInput />}
+            dateFormat="dd.MM.yyyy"
+            popperClassName="react-datepicker-popper"
+            minDate={new Date()}
+          />
+          <CalendarIcon>
+            <SvgIcon
+              id="icon-calendar"
+              fill="none"
+              stroke="#101828"
+              width="20"
+              height="20"
+            />
+          </CalendarIcon>
+        </CalendarWrapper>
         {errors.date && <ErrorMessage>{errors.date}</ErrorMessage>}
-        {/* <Calendar /> */}
         <Textarea
           type="text"
           name="comment"
@@ -82,7 +116,6 @@ const BookingForm = () => {
           onChange={handleChange}
           placeholder="Comment"
         />
-        {errors.comment && <ErrorMessage>{errors.comment}</ErrorMessage>}
       </InputsWrap>
 
       <SendButton type="submit">Send</SendButton>

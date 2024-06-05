@@ -1,6 +1,6 @@
 import { capitalizeText } from '../../helpers/capitalizedText';
 import { SvgIcon } from '../../helpers/svgIcon';
-import Air from '../../assets/img/Air.svg';
+import Air from '../../assets/img/air.svg';
 import { Item, List } from './Features.styled';
 
 const FeaturesList = ({ advert }) => {

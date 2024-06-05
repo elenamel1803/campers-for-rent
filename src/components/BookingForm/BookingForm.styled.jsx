@@ -85,3 +85,16 @@ export const ErrorMessage = styled.div`
   line-height: 1.5;
   color: #e44848;
 `;
+
+export const CalendarWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const CalendarIcon = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  pointer-events: none;
+`;
