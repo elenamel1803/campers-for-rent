@@ -29,7 +29,7 @@ const Equipment = ({ equipment, setEquipment }) => {
           onChange={handleChange}
         />
         <CheckboxCustom>
-          <img src={air} alt="Air" width={28} height={28} />
+          <img src={air} alt="air" width={28} height={28} />
           AC
         </CheckboxCustom>
       </label>
