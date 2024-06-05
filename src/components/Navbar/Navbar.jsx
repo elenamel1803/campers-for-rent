@@ -1,6 +1,6 @@
 import { Link, List } from './Navbar.styled';
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav>
       <List>
@@ -16,6 +16,6 @@ function Navbar() {
       </List>
     </nav>
   );
-}
+};
 
 export default Navbar;

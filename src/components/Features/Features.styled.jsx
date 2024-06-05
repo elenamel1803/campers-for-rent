@@ -32,7 +32,7 @@ export const Title = styled.h3`
   margin-bottom: 24px;
 `;
 
-export const DetailsList = styled.ul`
+export const DetailsListWrap = styled.ul`
   margin-top: 24px;
   display: grid;
   gap: 14px;

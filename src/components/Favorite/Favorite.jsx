@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectFavorite } from '../../redux/favorite/favoriteSelectors';
 import AdvertCard from 'components/Adverts/AdvertCard';
-import { FavoriteWrap, List } from './Favorite.styled';
+import { FavoriteWrap, List, Message, MessageWrap } from './Favorite.styled';
 
 const Favorite = () => {
   const favorites = useSelector(selectFavorite);
@@ -9,7 +9,9 @@ const Favorite = () => {
     <FavoriteWrap>
       <List>
         {favorites.length === 0 ? (
-          <p>Sorry, you did not select any advert.</p>
+          <MessageWrap>
+            <Message>Sorry, you did not select any advert.</Message>
+          </MessageWrap>
         ) : (
           favorites.map(advert => (
             <AdvertCard key={advert._id} advert={advert} />

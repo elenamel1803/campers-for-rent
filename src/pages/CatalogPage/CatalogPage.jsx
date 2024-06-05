@@ -1,12 +1,14 @@
-import AdvertsList from 'components/Adverts/AdvertsList.jsx';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import AdvertsList from 'components/Adverts/AdvertsList.jsx';
+import Loader from 'components/Loader/Loader';
+import Filters from 'components/Filters/Filters';
 import { fetchAllAdverts } from '../../redux/adverts/advertsOperations';
+import { setAllFilters } from '../../redux/filters/filtersSlice';
 import {
   selectFilteredAdverts,
   selectIsLoading,
 } from '../../redux/adverts/advertsSelectors';
-import Loader from 'components/Loader/Loader';
 import {
   Button,
   CatalogWrap,
@@ -14,8 +16,6 @@ import {
   MessageWrap,
   Wrap,
 } from './CatalogPage.styled';
-import Filters from 'components/Filters/Filters';
-import { setAllFilters } from '../../redux/filters/filtersSlice';
 
 const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoading);

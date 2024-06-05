@@ -8,13 +8,13 @@ const ReviewRating = ({ reviewer_rating }) => {
   for (let i = 0; i < 5; i++) {
     if (i < roundedRating) {
       stars.push(
-        <div key={i}>
+        <div key={`star-${i}`}>
           <SvgIcon id="icon-star" width="16" height="16" />
         </div>
       );
     } else {
       stars.push(
-        <div key={i}>
+        <div key={`star-gray-${i}`}>
           <SvgIcon id="icon-star_gray" width="16" height="16" />
         </div>
       );

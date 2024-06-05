@@ -1,30 +1,25 @@
-import { useState } from 'react';
-import Modal from 'components/Modal/Modal';
-import {
-  Box,
-  Button,
-  CardWrap,
-  DescriptionText,
-  DetailsItem,
-  DetailsList,
-  Img,
-  Item,
-  LocationText,
-  RatingText,
-  Title,
-  TitleWrap,
-  Wrap,
-} from './Adverts.styled';
-import { truncateText } from '../../helpers/truncateText';
-import { capitalizeText } from '../../helpers/capitalizedText';
-import { SvgIcon } from 'helpers/svgIcon';
-import Air from '../../assets/img/Air.svg';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { truncateText } from '../../helpers/truncateText';
+import { SvgIcon } from '../../helpers/svgIcon';
 import { selectFavorite } from '../../redux/favorite/favoriteSelectors';
 import {
   addToFavorite,
   removeFromFavorite,
 } from '../../redux/favorite/favoriteSlice';
+import Modal from 'components/Modal/Modal';
+import RatingLocation from 'components/RatingLocation/RatingLocation';
+import AdvertDetails from 'components/AdvertDetails/AdvertDetails';
+import {
+  Box,
+  Button,
+  CardWrap,
+  DescriptionText,
+  Img,
+  Item,
+  Title,
+  TitleWrap,
+} from './Adverts.styled';
 
 const AdvertCard = ({ advert }) => {
   const favorites = useSelector(selectFavorite);
@@ -33,6 +28,17 @@ const AdvertCard = ({ advert }) => {
   const dispatch = useDispatch();
 
   const toggleModal = () => setShowModal(prevShowModal => !prevShowModal);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showModal]);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
@@ -82,59 +88,23 @@ const AdvertCard = ({ advert }) => {
               </button>
             </Box>
           </TitleWrap>
-          <Wrap>
-            <RatingText>
-              <SvgIcon id="icon-star" width="16" height="16" />
-              {rating} ({reviews.length} Reviews)
-            </RatingText>
-            <LocationText>
-              <SvgIcon
-                id="icon-Map"
-                width="16"
-                height="16"
-                fill="none"
-                stroke="#101828"
-              />
-              {location}
-            </LocationText>
-          </Wrap>
+
+          <RatingLocation
+            rating={rating}
+            reviews={reviews}
+            location={location}
+          />
 
           <DescriptionText>{truncateText(description, 63)}</DescriptionText>
 
-          <DetailsList>
-            {adults > 0 && (
-              <DetailsItem>
-                <SvgIcon id="icon-users" />
-                {adults} adults
-              </DetailsItem>
-            )}
-            <DetailsItem>
-              <SvgIcon id="icon-transmission" fill="none" stroke="#101828" />
-              {capitalizeText(transmission)}
-            </DetailsItem>
-            <DetailsItem>
-              <SvgIcon id="icon-engine" />
-              {capitalizeText(engine)}
-            </DetailsItem>
-            {kitchen > 0 && (
-              <DetailsItem>
-                <SvgIcon id="icon-kitchen" fill="none" stroke="#101828" />
-                Kitchen
-              </DetailsItem>
-            )}
-            {beds > 0 && (
-              <DetailsItem>
-                <SvgIcon id="icon-beds" fill="none" stroke="#101828" />
-                {beds} beds
-              </DetailsItem>
-            )}
-            {airConditioner > 0 && (
-              <DetailsItem>
-                <img src={Air} alt="Air" />
-                AC
-              </DetailsItem>
-            )}
-          </DetailsList>
+          <AdvertDetails
+            adults={adults}
+            transmission={transmission}
+            engine={engine}
+            kitchen={kitchen}
+            beds={beds}
+            airConditioner={airConditioner}
+          />
 
           <Button type="button" onClick={toggleModal}>
             Show more

@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react';
+import RatingLocation from 'components/RatingLocation/RatingLocation';
 import Features from 'components/Features/Features';
 import Reviews from 'components/Reviews/Reviews';
+import { SvgIcon } from 'helpers/svgIcon';
 import {
   ButtonClose,
   ButtonText,
   DescriptionText,
   GaleryWrap,
   Img,
-  LocationText,
   ModalWrap,
   NavWrap,
   Overlay,
   PriceText,
-  RatingText,
   Title,
-  Wrap,
 } from './Modal.styled';
-import { SvgIcon } from 'helpers/svgIcon';
 
 const Modal = ({ advert, onClose }) => {
   const [activeTab, setActiveTab] = useState(null);
@@ -46,22 +44,7 @@ const Modal = ({ advert, onClose }) => {
     <Overlay onClick={handleOverlayClick}>
       <ModalWrap>
         <Title>{name}</Title>
-        <Wrap>
-          <RatingText>
-            <SvgIcon id="icon-star" width="16" height="16" />
-            {rating} ({reviews.length} Reviews)
-          </RatingText>
-          <LocationText>
-            <SvgIcon
-              id="icon-Map"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="#101828"
-            />
-            {location}
-          </LocationText>
-        </Wrap>
+        <RatingLocation rating={rating} reviews={reviews} location={location} />
         <PriceText>€{price.toFixed(2)}</PriceText>
         <GaleryWrap>
           {gallery.map((imageUrl, index) => (

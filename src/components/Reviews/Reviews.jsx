@@ -1,4 +1,5 @@
 import BookingForm from 'components/BookingForm/BookingForm';
+import ReviewRating from './ReviewsRating';
 import {
   Box,
   FirstLetter,
@@ -9,7 +10,6 @@ import {
   Text,
   Wrap,
 } from './Reviews.styled';
-import ReviewRating from './ReviewsRating';
 
 const Reviews = ({ advert }) => {
   const firstNameLetter = name => {
@@ -20,13 +20,12 @@ const Reviews = ({ advert }) => {
     <ReviewsWrap>
       <List>
         {advert.reviews.map(
-          ({ reviewer_name, reviewer_rating, comment, index }) => (
-            <Item key={index}>
+          ({ reviewer_name, reviewer_rating, comment }, index) => (
+            <Item key={`${reviewer_name}-${index}`}>
               <Box>
                 <FirstLetter>{firstNameLetter(reviewer_name)}</FirstLetter>
                 <Wrap>
                   <Name>{reviewer_name}</Name>
-                  {/* <span>{reviewer_rating}</span> */}
                   <ReviewRating reviewer_rating={reviewer_rating} />
                 </Wrap>
               </Box>

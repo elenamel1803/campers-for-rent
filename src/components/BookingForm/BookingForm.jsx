@@ -10,6 +10,7 @@ import {
   Title,
 } from './BookingForm.styled';
 import { validate } from '../../helpers/validateBookingForm';
+import Calendar from 'components/Calendar/Calendar';
 
 const INITIAL_STATE = {
   name: '',
@@ -73,6 +74,7 @@ const BookingForm = () => {
           placeholder="Booking date"
         />
         {errors.date && <ErrorMessage>{errors.date}</ErrorMessage>}
+        <Calendar />
         <Textarea
           type="text"
           name="comment"

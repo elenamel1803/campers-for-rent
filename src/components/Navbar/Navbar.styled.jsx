@@ -14,4 +14,5 @@ export const Link = styled(NavLink)`
 export const List = styled.ul`
   display: flex;
   justify-content: space-between;
+  padding: 32px;
 `;

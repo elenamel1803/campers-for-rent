@@ -1,12 +1,12 @@
 import { SvgIcon } from 'helpers/svgIcon';
-import Air from '../../assets/img/Air.svg';
+import air from '../../assets/img/air.svg';
 import { CheckboxCustom, Input, Wrap } from './Equipment.styled';
 
 const Equipment = ({ equipment, setEquipment }) => {
   const equipmentOptions = [
     { id: 'transmission', label: 'Automatic', icon: 'icon-transmission' },
     { id: 'kitchen', label: 'Kitchen', icon: 'icon-kitchen' },
-    { id: 'TV', label: 'TV', icon: 'icon-TV' },
+    { id: 'TV', label: 'TV', icon: 'icon-tv' },
     { id: 'shower', label: 'Shower/WC', icon: 'icon-shower' },
   ];
 
@@ -29,7 +29,7 @@ const Equipment = ({ equipment, setEquipment }) => {
           onChange={handleChange}
         />
         <CheckboxCustom>
-          <img src={Air} alt="Air" width={28} height={28} />
+          <img src={air} alt="Air" width={28} height={28} />
           AC
         </CheckboxCustom>
       </label>

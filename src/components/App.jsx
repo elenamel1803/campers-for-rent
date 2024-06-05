@@ -1,7 +1,7 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 import CatalogPage from 'pages/CatalogPage/CatalogPage';
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 import HomePage from 'pages/HomePage/HomePage';
-import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 
 export const App = () => {

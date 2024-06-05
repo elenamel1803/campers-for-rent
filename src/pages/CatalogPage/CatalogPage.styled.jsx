@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CatalogWrap = styled.div`
   display: flex;
   gap: 64px;
+  padding: 32px;
 `;
 
 export const Wrap = styled.div`

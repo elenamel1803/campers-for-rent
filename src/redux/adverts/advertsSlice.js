@@ -3,7 +3,6 @@ import { fetchAllAdverts } from './advertsOperations';
 
 const initialState = {
   items: [],
-  // item: {},
   isLoading: false,
   error: null,
 };

@@ -3,9 +3,9 @@ import { Input, RadioCustom, Wrap } from './Type.styled';
 
 const Type = ({ type, setType }) => {
   const typeOptions = [
-    { id: 'panelTruck', label: 'Van', icon: 'icon-Van' },
-    { id: 'fullyIntegrated', label: 'Fully Integrated', icon: 'icon-Fully' },
-    { id: 'alcove', label: 'Alcove', icon: 'icon-Alcove' },
+    { id: 'panelTruck', label: 'Van', icon: 'icon-van' },
+    { id: 'fullyIntegrated', label: 'Fully Integrated', icon: 'icon-fully' },
+    { id: 'alcove', label: 'Alcove', icon: 'icon-alcove' },
   ];
 
   const handleChange = e => {

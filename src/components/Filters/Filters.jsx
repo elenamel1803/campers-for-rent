@@ -1,15 +1,15 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Location from 'components/Location/Location';
 import Equipment from 'components/Equipment/Equipment';
 import Type from 'components/Type/Type';
-import { Button, CategoryText, FiltersWrap, Text } from './Filters.styled';
 import { SvgIcon } from 'helpers/svgIcon';
-import { useSelector } from 'react-redux';
 import {
   selectFiltersLocation,
   selectFiltersEquipment,
   selectFiltersType,
 } from '../../redux/filters/filtersSelectors';
-import { useState } from 'react';
+import { Button, CategoryText, FiltersWrap, Text } from './Filters.styled';
 
 const Filters = ({ onSearch }) => {
   const currentLocation = useSelector(selectFiltersLocation);
