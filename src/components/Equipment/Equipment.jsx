@@ -1,5 +1,5 @@
 import { SvgIcon } from 'helpers/svgIcon';
-import air from '../../assets/img/air.svg';
+import air from 'assets/img/air.svg';
 import { CheckboxCustom, Img, Input, Wrap } from './Equipment.styled';
 
 const Equipment = ({ equipment, setEquipment }) => {
