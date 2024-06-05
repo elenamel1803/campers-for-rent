@@ -22,11 +22,11 @@ export const Button = styled.button`
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.01em;
-  color: #101828;
+  color: var(--main);
   margin: 0 auto;
 
   &:hover {
-    border: 1px solid #e44848;
+    border: 1px solid var(--button);
   }
 `;
 
@@ -42,5 +42,5 @@ export const Message = styled.p`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  color: #d84343;
+  color: var(--button-hover);
 `;

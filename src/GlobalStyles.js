@@ -6,6 +6,7 @@ import InterSemiBold from './assets/fonts/Inter-SemiBold.ttf';
 const GlobalStyles = createGlobalStyle`
 :root {
 	--button: #e44848;
+  --button-hover: #d84343;
 	--main: #101828;
 	--inputs: #f7f7f7;
 	--block-features: #f2f4f7;
@@ -146,7 +147,7 @@ margin-bottom: 20px;
 font-size: 12px;
 line-height: 1.2;
 text-align: center;
-color: #475467;
+color: var(--text);
 width: 41px;
 text-transform: uppercase;
 
@@ -158,11 +159,11 @@ justify-content: space-between
 }
 
 .react-datepicker__day--selected{
-  background: #e44848;
+  background: var(--button);
 }
 
 .react-datepicker__day--keyboard-selected{
-  background: #f7f7f7;
+  background: var(--inputs);
 }
 
 .react-datepicker__navigation {
@@ -178,10 +179,10 @@ justify-content: space-between
 }
 
 .react-datepicker__navigation-icon::before {
-  border-color: #101828;
+  border-color: var(--main);
 
   &:hover{
-    border-color: #101828;
+    border-color: var(--main);
 }}
 `;
 

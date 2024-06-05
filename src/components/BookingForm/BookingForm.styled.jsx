@@ -11,7 +11,7 @@ export const Title = styled.h3`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--main);
   margin-bottom: 8px;
 `;
 
@@ -19,7 +19,7 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--text);
   margin-bottom: 24px;
 `;
 
@@ -28,11 +28,11 @@ export const Input = styled.input`
   border: none;
   padding: 18px;
   width: 400px;
-  background: #f7f7f7;
+  background: var(--inputs);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);
 
   &::placeholder {
     font-weight: 400;
@@ -48,11 +48,11 @@ export const Textarea = styled.textarea`
   padding: 18px;
   width: 400px;
   height: 114px;
-  background: #f7f7f7;
+  background: var(--inputs);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);
 `;
 
 export const InputsWrap = styled.div`
@@ -67,7 +67,7 @@ export const SendButton = styled.button`
   padding: 16px 60px;
   width: 160px;
   height: 56px;
-  background: #e44848;
+  background: var(--button);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -75,7 +75,7 @@ export const SendButton = styled.button`
   color: #fff;
 
   &:hover {
-    background: #d84343;
+    background: var(--button-hover);
   }
 `;
 
@@ -83,7 +83,7 @@ export const ErrorMessage = styled.div`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  color: #e44848;
+  color: var(--button);
 `;
 
 export const CalendarWrapper = styled.div`

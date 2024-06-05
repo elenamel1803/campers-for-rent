@@ -13,7 +13,7 @@ const RatingLocation = ({ rating, reviews, location }) => (
         width="16"
         height="16"
         fill="none"
-        stroke="#101828"
+        stroke="var(--main)"
       />
       {location}
     </LocationText>

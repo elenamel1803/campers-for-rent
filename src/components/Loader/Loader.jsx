@@ -11,7 +11,7 @@ const Loader = () => {
         ariaLabel="hourglass-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        colors={['#D84343', '#E44848']}
+        colors={['var(--button-hover)', 'var(--button)']}
       />
     </LoadWrap>
   );

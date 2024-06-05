@@ -22,7 +22,7 @@ const Location = ({ location, setLocation }) => {
             width="18"
             height="20"
             fill="none"
-            stroke={location ? '#101828' : 'rgba(16, 24, 40, 0.6)'}
+            stroke={location ? 'var(--main)' : 'rgba(16, 24, 40, 0.6)'}
           />
         </IconWrapper>
         <Input

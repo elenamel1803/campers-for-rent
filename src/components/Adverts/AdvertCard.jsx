@@ -82,8 +82,8 @@ const AdvertCard = ({ advert }) => {
                   id="icon-hart"
                   width="24"
                   height="24"
-                  fill={isFavorite ? '#E44848' : 'none'}
-                  stroke={isFavorite ? '#E44848' : '#101828'}
+                  fill={isFavorite ? 'var(--button)' : 'none'}
+                  stroke={isFavorite ? 'var(--button)' : 'var(--main)'}
                 />
               </button>
             </Box>

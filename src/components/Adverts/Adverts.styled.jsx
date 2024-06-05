@@ -33,7 +33,7 @@ export const Title = styled.h3`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);
 `;
 
 export const TitleWrap = styled.div`
@@ -52,7 +52,7 @@ export const DescriptionText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--text);
   margin-bottom: 24px;
 `;
 
@@ -61,7 +61,7 @@ export const Button = styled.button`
   padding: 16px 40px;
   width: 166px;
   height: 56px;
-  background: #e44848;
+  background: var(--button);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -69,6 +69,6 @@ export const Button = styled.button`
   color: #fff;
 
   &:hover {
-    background: #d84343;
+    background: var(--button-hover);
   }
 `;

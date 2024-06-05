@@ -7,7 +7,7 @@ export const Link = styled(NavLink)`
   line-height: 1.25;
 
   &.active {
-    color: #e44848;
+    color: var(--button);
   }
 `;
 

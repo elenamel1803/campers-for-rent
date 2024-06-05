@@ -10,7 +10,7 @@ export const Input = styled.input`
   display: none;
 
   &:checked + div {
-    border: 1px solid #e44848;
+    border: 1px solid var(--button);
   }
 `;
 
@@ -30,6 +30,6 @@ export const RadioCustom = styled.div`
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
-  color: #101828;
+  color: var(--main);
   cursor: pointer;
 `;

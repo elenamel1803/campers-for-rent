@@ -15,20 +15,20 @@ export const Item = styled.li`
   display: flex;
   gap: 6px;
   height: 44px;
-  background: #f2f4f7;
+  background: var(--block-features);
   mix-blend-mode: multiply;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
-  color: #101828;
+  color: var(--main);
 `;
 
 export const Title = styled.h3`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--main);
   margin-bottom: 24px;
 `;
 

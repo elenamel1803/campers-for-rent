@@ -9,7 +9,7 @@ export const RatingText = styled.p`
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #101828;
+  color: var(--main);
 `;
 
 export const LocationText = styled.p`
@@ -19,7 +19,7 @@ export const LocationText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #101828;
+  color: var(--main);
 `;
 
 export const Wrap = styled.div`

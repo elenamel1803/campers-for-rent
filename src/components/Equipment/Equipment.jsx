@@ -46,7 +46,7 @@ const Equipment = ({ equipment, setEquipment }) => {
               width="28"
               height="28"
               fill="none"
-              stroke="#101828"
+              stroke="var(--main)"
             />
             {option.label}
           </CheckboxCustom>

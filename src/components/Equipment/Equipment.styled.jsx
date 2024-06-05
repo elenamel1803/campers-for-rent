@@ -27,11 +27,11 @@ export const CheckboxCustom = styled.div`
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
-  color: #101828;
+  color: var(--main);
   cursor: pointer;
 
   ${Input}:checked + & {
-    border: 1px solid #e44848;
+    border: 1px solid var(--button);
   }
 `;
 

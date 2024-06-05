@@ -53,7 +53,12 @@ const Modal = ({ advert, onClose }) => {
         </GaleryWrap>
         <DescriptionText>{description}</DescriptionText>
         <ButtonClose type="button" onClick={onClose}>
-          <SvgIcon id="icon-close" width="32" height="32" stroke="#101828" />
+          <SvgIcon
+            id="icon-close"
+            width="32"
+            height="32"
+            stroke="var(--main)"
+          />
         </ButtonClose>
         <NavWrap>
           <ButtonText

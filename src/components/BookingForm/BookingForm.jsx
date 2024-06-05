@@ -102,7 +102,7 @@ const BookingForm = () => {
             <SvgIcon
               id="icon-calendar"
               fill="none"
-              stroke="#101828"
+              stroke="var(--main)"
               width="20"
               height="20"
             />

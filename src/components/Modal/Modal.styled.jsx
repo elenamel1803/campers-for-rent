@@ -28,7 +28,7 @@ export const Title = styled.h2`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);
   margin-bottom: 10px;
 `;
 
@@ -54,7 +54,7 @@ export const DescriptionText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--text);
   margin-bottom: 44px;
 `;
 
@@ -62,7 +62,7 @@ export const ButtonText = styled.button`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--main);
   position: relative;
 
   &.active::after {
@@ -71,7 +71,7 @@ export const ButtonText = styled.button`
     display: block;
     width: 100%;
     height: 5px;
-    background-color: #e44848;
+    background-color: var(--button);
     margin-top: 30px;
   }
 `;

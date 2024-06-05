@@ -20,7 +20,7 @@ const AdvertDetails = ({
         </DetailsItem>
       )}
       <DetailsItem>
-        <SvgIcon id="icon-transmission" fill="none" stroke="#101828" />
+        <SvgIcon id="icon-transmission" fill="none" stroke="var(--main)" />
         {capitalizeText(transmission)}
       </DetailsItem>
       <DetailsItem>
@@ -29,13 +29,13 @@ const AdvertDetails = ({
       </DetailsItem>
       {kitchen > 0 && (
         <DetailsItem>
-          <SvgIcon id="icon-kitchen" fill="none" stroke="#101828" />
+          <SvgIcon id="icon-kitchen" fill="none" stroke="var(--main)" />
           Kitchen
         </DetailsItem>
       )}
       {beds > 0 && (
         <DetailsItem>
-          <SvgIcon id="icon-beds" fill="none" stroke="#101828" />
+          <SvgIcon id="icon-beds" fill="none" stroke="var(--main)" />
           {beds} beds
         </DetailsItem>
       )}

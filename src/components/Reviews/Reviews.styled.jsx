@@ -32,11 +32,11 @@ export const FirstLetter = styled.span`
   border-radius: 60px;
   width: 60px;
   height: 60px;
-  background: #f2f4f7;
+  background: var(--block-features);
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
-  color: #e44848;
+  color: var(--button);
 `;
 
 export const Wrap = styled.div`
@@ -48,7 +48,7 @@ export const Name = styled.span`
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33333;
-  color: #101828;
+  color: var(--main);
   margin-bottom: 4px;
 `;
 
@@ -56,7 +56,7 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--text);
 `;
 
 export const Stars = styled.div`

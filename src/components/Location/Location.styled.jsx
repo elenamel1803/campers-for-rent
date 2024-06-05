@@ -19,7 +19,7 @@ export const InputWrapper = styled.div`
   width: 360px;
   height: 56px;
   border-radius: 10px;
-  background: #f7f7f7;
+  background: var(--inputs);
 `;
 
 export const IconWrapper = styled.div`
@@ -37,11 +37,11 @@ export const Input = styled.input`
   padding: 18px 18px 18px 46px;
   width: 360px;
   height: 56px;
-  background: #f7f7f7;
+  background: var(--inputs);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  color: #101828;
+  color: var(--main);
   border: 2px solid transparent;
   outline: none;
 

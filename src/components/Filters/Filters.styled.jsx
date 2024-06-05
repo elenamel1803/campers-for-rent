@@ -10,7 +10,7 @@ export const Text = styled.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
+  color: var(--text);
   margin-bottom: 14px;
 `;
 
@@ -18,7 +18,7 @@ export const CategoryText = styled.p`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--main);
   margin-bottom: 24px;
 `;
 
@@ -27,7 +27,7 @@ export const Button = styled.button`
   padding: 16px 60px;
   width: 173px;
   height: 56px;
-  background: #e44848;
+  background: var(--button);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -35,6 +35,6 @@ export const Button = styled.button`
   color: #fff;
 
   &:hover {
-    background: #d84343;
+    background: var(--button-hover);
   }
 `;
