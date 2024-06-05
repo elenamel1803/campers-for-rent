@@ -46,7 +46,7 @@
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.746" d="M25.051 19.879V4.364c-6.227 5.94-6.494 10.756-6.465 15.515h6.465zm0 0v7.758h-1.293v-3.879M10.828 5.657v21.98M6.95 5.657v3.879a3.882 3.882 0 0 0 3.879 3.879 3.882 3.882 0 0 0 3.879-3.879V5.657"/>
     </symbol>
     <symbol id="icon-line_red" viewBox="0 0 453 32">
-      <path fill="none" stroke="#e44848" stroke-width="26.667" d="M0 16h453.333" style="stroke:var(--color1, #e44848)"/>
+      <path fill="none" stroke="var(--button)" stroke-width="26.667" d="M0 16h453.333" style="stroke:var(--color1, var(--button))"/>
     </symbol>
     <symbol id="icon-line" viewBox="0 0 14432 32">
       <path stroke-width="16" d="M0 16h14432"/>
