@@ -1,6 +1,6 @@
 import { SvgIcon } from 'helpers/svgIcon';
 import air from '../../assets/img/air.svg';
-import { CheckboxCustom, Input, Wrap } from './Equipment.styled';
+import { CheckboxCustom, Img, Input, Wrap } from './Equipment.styled';
 
 const Equipment = ({ equipment, setEquipment }) => {
   const equipmentOptions = [
@@ -29,8 +29,7 @@ const Equipment = ({ equipment, setEquipment }) => {
           onChange={handleChange}
         />
         <CheckboxCustom>
-          <img src={air} alt="air" width={28} height={28} />
-          AC
+          <Img src={air} alt="Air" /> AC
         </CheckboxCustom>
       </label>
       {equipmentOptions.map(option => (

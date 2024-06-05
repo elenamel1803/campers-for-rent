@@ -34,3 +34,8 @@ export const CheckboxCustom = styled.div`
     border: 1px solid #e44848;
   }
 `;
+
+export const Img = styled.img`
+  width: 28px;
+  height: 28px;
+`;
